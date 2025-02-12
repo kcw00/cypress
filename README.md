@@ -54,16 +54,16 @@ This repository provides a step-by-step guide on how to set up Cypress for testi
 
 ## Handling errors
 
-If you see the Eslint error in your file,  
+- If you see the Eslint error in your file,  
 1. Install eslint-plugin-cypress  
     `npm install eslint-plugin-cypress --save-dev`  
 2. Change the config in .eslintrc.cjs  
     add `"cypress/globals": true` into `"env"` section  
     add `"react", "jest", "cypress"` into `"plugin"` section  
 
-If you see the CypressError like the screenshot below,  
+- If you see the CypressError like the screenshot below,  
 ![Alt text](image/cypressError.png)
-1. Fix `npm run dev` script in the package.json of the frontend folder.  
+1. Fix `npm run dev` script in the package.json in the frontend folder.  
     ```javascript
     "dev": "vite --host"
     ```
