@@ -38,16 +38,13 @@ describe('Note app', function () {
       .should('contain', 'Wrong credentials')
       .and('have.css', 'color', 'rgb(255, 0, 0)')
       .and('have.css', 'border-style', 'solid')
-    
+
     cy.get('html').should('not.contain', 'Chaewon Kim logged in')
   })
 
   describe('when logged in', function () {
     beforeEach(function () {
-      cy.contains('log in').click()
-      cy.get('#username').type('chaewon')
-      cy.get('#password').type('thisispw')
-      cy.get('#login-button').click()
+      cy.login({ username: 'chaewon', password: 'thisispw' })
     })
 
     it('a new note can be created', function () {
@@ -59,9 +56,10 @@ describe('Note app', function () {
 
     describe('and a note exists', function () {
       beforeEach(function () {
-        cy.contains('new note').click()
-        cy.get('input').type('another note cypress')
-        cy.contains('save').click()
+        cy.createNote({
+          content: 'another note cypress',
+          important: true
+        })
       })
 
       it('it can be made not important', function () {
