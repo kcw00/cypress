@@ -41,11 +41,11 @@ This repository provides a step-by-step guide on how to set up Cypress for testi
 1. To start Cypress in the graphical mode, run this command  
     `npm run cypress:open`
 
-     When Cypress is opened,  
-       1) Select `E2E Testing`  
-       2) Select `Chrome` broswer  
-       3) Select `Create a new spec`  
-       4) Enter this path for your new spec `cypress/e2e/{yourprojectname}.cy.js`  
+     - When Cypress is opened,  
+       1. Select `E2E Testing`  
+       2. Select `Chrome` broswer  
+       3. Select `Create a new spec`  
+       4. Enter this path for your new spec `cypress/e2e/{yourprojectname}.cy.js`  
 
 2. To run tests from the command line, run this command  
     `npm run test:e2e`
