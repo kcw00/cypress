@@ -28,6 +28,14 @@ describe('Note app', function () {
     cy.contains('Chaewon Kim logged in')
   })
 
+  it('user can log out', function () {
+    cy.contains('log in').click()
+    cy.get('#username').type('chaewon')
+    cy.get('#password').type('thisispw')
+    cy.get('#login-button').click()
+    cy.contains('logout').click()
+  })
+
   it('login fails with wrong password', function () {
     cy.contains('log in').click()
     cy.get('#username').type('chaewon')
