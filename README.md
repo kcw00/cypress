@@ -34,6 +34,23 @@ This repository provides a step-by-step guide on how to set up Cypress for testi
         "start:test": "NODE_ENV=test node index.js"
         }
     ```
+
+2. Create `cypress.config.js`
+```js
+const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+    baseUrl:'your-frontend-url',
+    env: {
+      BACKEND: 'your-backend-url'
+    }
+  },
+});
+```
 ---
 
 ## Usage
